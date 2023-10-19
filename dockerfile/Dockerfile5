@@ -1,0 +1,11 @@
+# 构建阶段
+FROM golang:1.20 AS build
+WORKDIR /app
+COPY pkg/* /go/pkg/
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app
+
+# 最终阶段
+FROM scratch
+COPY --from=build /app/app /app
+CMD ["/app"]

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  example1:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile1
+  
+  example2:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile2
+ 
+  example3:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile3
+  
+  example4:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile4
+
+  example5:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile5 
